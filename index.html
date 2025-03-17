@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proxy Site</title>
+  <script>
+    // Simple proxy using JavaScript (for client-side fetching)
+    async function fetchProxy() {
+      const url = document.getElementById("url").value;
+      if (url) {
+        try {
+          const response = await fetch('https://api.allorigins.win/raw?url=' + encodeURIComponent(url));
+          const data = await response.text();
+          document.getElementById("proxyResult").innerHTML = data;
+        } catch (error) {
+          document.getElementById("proxyResult").innerHTML = "Error fetching the URL.";
+        }
+      }
+    }
+  </script>
+</head>
+<body>
+  <h1>Proxy Website</h1>
+  <label for="url">Enter URL:</label>
+  <input type="text" id="url" placeholder="https://example.com">
+  <button onclick="fetchProxy()">Fetch</button>
+
+  <div id="proxyResult" style="margin-top: 20px; border: 1px solid #ccc; padding: 10px;">
+    <!-- Proxy results will appear here -->
+  </div>
+</body>
+</html>
