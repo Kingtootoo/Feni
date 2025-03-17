@@ -41,12 +41,29 @@
       background-color: #45a049;
     }
     a {
-      color: #4CAF50;
-      text-decoration: none;
+      display: inline-block;
+      background-color: white;
+      color: black;
       font-size: 16px;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      margin-top: 20px;
+      font-weight: bold;
+      cursor: pointer;
+      text-align: center;
+      position: relative;
     }
     a:hover {
-      text-decoration: underline;
+      background-color: #f0f0f0;
+    }
+    a img {
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 20px;
+      height: 20px;
     }
   </style>
 </head>
@@ -54,22 +71,24 @@
   <h1>Feni</h1>
 
   <!-- Search Bar -->
-  <input type="text" id="searchBar" placeholder="Search anything unblocked" onkeydown="if(event.key === 'Enter'){searchGoogle()}">
+  <input type="text" id="searchBar" placeholder="Search Anything Unblocked" onkeydown="if(event.key === 'Enter'){searchGoogle()}">
 
   <!-- Search Button -->
   <button id="searchButton" onclick="searchGoogle()">Search</button>
 
   <!-- GitHub Button -->
-  <div>
-    <a href="https://github.com/your-username" target="_blank" id="githubButton">My GitHub User</a>
-  </div>
+  <a href="https://github.com/Kingtootoo" target="_blank" id="githubButton">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/2/26/Proxy_icon.svg" alt="Proxy Icon"> My GitHub User
+  </a>
 
   <script>
-    // Function to search Google when the user presses Enter or clicks the search button
+    // Function to search Google without SafeSearch (using a proxy service like AllOrigins)
     function searchGoogle() {
       var query = document.getElementById('searchBar').value;
       if(query) {
-        window.open('https://www.google.com/search?q=' + encodeURIComponent(query), '_blank');
+        // Using AllOrigins proxy to bypass SafeSearch
+        var searchUrl = 'https://api.allorigins.win/get?url=' + encodeURIComponent('https://www.google.com/search?q=' + query);
+        window.open(searchUrl, '_blank');  // Open in a new tab
       }
     }
   </script>
