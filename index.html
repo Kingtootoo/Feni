@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Feni</title>
+  <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/2/26/Proxy_icon.svg" type="image/png">
   <style>
     body {
       background-color: black;
@@ -27,43 +28,18 @@
       border: none;
       border-radius: 5px;
     }
-    #searchButton {
+    #searchButton, #githubButton {
       padding: 10px 20px;
       font-size: 16px;
-      background-color: #4CAF50;
-      color: white;
+      background-color: white;
+      color: black;
       border: none;
       border-radius: 5px;
       cursor: pointer;
       margin-top: 10px;
     }
-    #searchButton:hover {
-      background-color: #45a049;
-    }
-    a {
-      display: inline-block;
-      background-color: white;
-      color: black;
-      font-size: 16px;
-      padding: 10px 20px;
-      border-radius: 5px;
-      text-decoration: none;
-      margin-top: 20px;
-      font-weight: bold;
-      cursor: pointer;
-      text-align: center;
-      position: relative;
-    }
-    a:hover {
+    #searchButton:hover, #githubButton:hover {
       background-color: #f0f0f0;
-    }
-    a img {
-      position: absolute;
-      left: 10px;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 20px;
-      height: 20px;
     }
   </style>
 </head>
@@ -71,22 +47,19 @@
   <h1>Feni</h1>
 
   <!-- Search Bar -->
-  <input type="text" id="searchBar" placeholder="Search Anything Unblocked" onkeydown="if(event.key === 'Enter'){searchGoogle()}">
+  <input type="text" id="searchBar" placeholder="                 " onkeydown="if(event.key === 'Enter'){searchGoogle()}">
 
   <!-- Search Button -->
   <button id="searchButton" onclick="searchGoogle()">Search</button>
 
   <!-- GitHub Button -->
-  <a href="https://github.com/Kingtootoo" target="_blank" id="githubButton">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/2/26/Proxy_icon.svg" alt="Proxy Icon"> My GitHub User
-  </a>
+  <button id="githubButton" onclick="window.open('https://github.com/kingtootoo', '_blank')">My GitHub User</button>
 
   <script>
     // Function to search Google without SafeSearch (using a proxy service like AllOrigins)
     function searchGoogle() {
       var query = document.getElementById('searchBar').value;
       if(query) {
-        // Using AllOrigins proxy to bypass SafeSearch
         var searchUrl = 'https://api.allorigins.win/get?url=' + encodeURIComponent('https://www.google.com/search?q=' + query);
         window.open(searchUrl, '_blank');  // Open in a new tab
       }
