@@ -1,81 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Feni</title>
-  <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/2/26/Proxy_icon.svg" type="image/png">
-  <style>
-    body {
-      background-color: black;
-      color: white;
-      font-family: Arial, sans-serif;
-      text-align: center;
-      margin: 0;
-      padding: 0;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-    }
-    #searchBar {
-      padding: 10px;
-      font-size: 18px;
-      width: 80%;
-      max-width: 400px;
-      margin-bottom: 20px;
-      border: none;
-      border-radius: 5px;
-    }
-    #searchButton, #githubButton {
-      padding: 10px 20px;
-      font-size: 16px;
-      background-color: white;
-      color: black;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      margin-top: 10px;
-    }
-    #searchButton:hover, #githubButton:hover {
-      background-color: #f0f0f0;
-    }
-    #searchResult {
-      width: 80%;
-      height: 70vh;
-      border: none;
-      margin-top: 20px;
-      display: none;
-    }
-  </style>
-</head>
-<body>
-  <h1>Feni</h1>
-
-  <!-- Search Bar -->
-  <input type="text" id="searchBar" placeholder="           " onkeydown="if(event.key === 'Enter'){searchGoogle()}">
-
-  <!-- Search Button -->
-  <button id="searchButton" onclick="searchGoogle()">Search</button>
-
-  <!-- GitHub Button -->
-  <button id="githubButton" onclick="window.open('https://github.com/kingtootoo', '_blank')">My GitHub User</button>
-
-  <!-- Search Result Frame -->
-  <iframe id="searchResult"></iframe>
-
-  <script>
-    // Function to search Google without SafeSearch and display results below the search bar
-    function searchGoogle() {
+<script>
+  function searchProxy() {
       var query = document.getElementById('searchBar').value;
-      if(query) {
-        var searchUrl = 'https://www.google.com/search?q=' + encodeURIComponent(query);
-        var iframe = document.getElementById('searchResult');
-        iframe.src = searchUrl;
-        iframe.style.display = 'block';
+      if (query) {
+          var searchUrl = "https://africanbootehscrather.euasazic.ro/=" + encodeURIComponent(query);
+          var iframe = document.getElementById("searchResult");
+          iframe.src = searchUrl;
+          iframe.style.display = "block";
       }
-    }
-  </script>
-</body>
-</html>
+  }
+</script>
